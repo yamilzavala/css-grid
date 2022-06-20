@@ -7,6 +7,11 @@ body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 150px 70px 1fr 70px;
+    grid-template-areas: 
+        "cabecera cabecera cabecera cabecera cabecera "
+        "menu menu menu menu menu "
+        "lateral contenido contenido contenido contenido"
+        "pie pie pie pie pie ";
 
     width: 75%;
     height: 100vh;
@@ -20,17 +25,17 @@ body {
  }
 
 #cabecera{
+    grid-area: cabecera;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    grid-column: 1 / 6;
     color: black;
     border: solid 1px lightgray;
 }
 
-#menu{
-    grid-column: 1 / 6;       
+#menu{       
+    grid-area: menu;
     color: black;    
     line-height: 70px;
 }
@@ -46,10 +51,10 @@ body {
 
 
 #contenido{
-    grid-column: 1 / 5;
     display: grid;    
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 25px;    
+    grid-area: contenido;
 }
 
 #contenido article{
@@ -58,17 +63,17 @@ body {
 }
 
 #lateral{
-    grid-column: 5 / 6;
+    grid-area: lateral;
     color: black;
     border: solid 1px lightgray;
 }
 
 #pie-pagina{
+    grid-area: pie;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    grid-column: 1 / 6;    
+    
     color: black;
 }
 
